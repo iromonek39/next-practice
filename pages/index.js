@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { useState } from 'react'
+import React, { useState } from 'react'
 // import styles from '../styles/Home.module.css'
 import styles from '../styles/HomeTest.module.css'
 
@@ -33,10 +33,12 @@ export default function Home() {
       <button onClick={clickTest}>クリックテスト</button>
       {isClick ? <p>クリックした</p> : <p>クリックしてない</p>}
       {arr.map((item, index) => (
-        <p>{index}</p>
-          // <p>{item}</p>
-          // <p>{item.id}</p>
-          // <p>{item.subject}</p>
+        // <p>{index}</p>
+        <React.Fragment key={item.id}>
+          <p>{index} ---</p>
+          <p>id: {item.id}</p>
+          <p>教科: {item.subject}</p>
+        </ React.Fragment>
       ))}
     </>
   )
