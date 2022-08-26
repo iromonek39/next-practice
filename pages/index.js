@@ -6,6 +6,20 @@ import styles from '../styles/HomeTest.module.css'
 
 export default function Home() {
   const [isClick, setIsClick] = useState(false)
+  const arr = [
+    {
+      id: 1,
+      subject: '国語'
+    },
+    {
+      id: 2,
+      subject: '数学'
+    },
+    {
+      id: 3,
+      subject: '体育'
+    }
+  ]
 
   const clickTest = (e) => {
     const changeIsClick = true
@@ -18,6 +32,12 @@ export default function Home() {
       <div className={styles.test}>test</div>
       <button onClick={clickTest}>クリックテスト</button>
       {isClick ? <p>クリックした</p> : <p>クリックしてない</p>}
+      {arr.map((item, index) => (
+        <p>{index}</p>
+          // <p>{item}</p>
+          // <p>{item.id}</p>
+          // <p>{item.subject}</p>
+      ))}
     </>
   )
 }
