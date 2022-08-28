@@ -1,11 +1,14 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 import React, { useState } from 'react'
 import Teacher from '../components/teacher'
 // import styles from '../styles/Home.module.css'
 import styles from '../styles/HomeTest.module.css'
 
 export default function Home() {
+  const route = useRouter()
+
   const [isClick, setIsClick] = useState(false)
   const arr = [
     {
@@ -27,6 +30,10 @@ export default function Home() {
     setIsClick(changeIsClick)
   }
 
+  const linkTo = () => {
+    route.push('/test')
+  }
+
   return (
     <>
       <div>test</div>
@@ -34,13 +41,7 @@ export default function Home() {
       <button onClick={clickTest}>クリックテスト</button>
       {isClick ? <p>クリックした</p> : <p>クリックしてない</p>}
       <Teacher teacherArr={arr}/>
-      {/* {arr.map((item, index) => (
-        <React.Fragment key={item.id}>
-          <p>{index} ---</p>
-          <p>id: {item.id}</p>
-          <p>教科: {item.subject}</p>
-        </ React.Fragment>
-      ))} */}
+      <button onClick={linkTo}>testに遷移</button>
     </>
   )
 }
