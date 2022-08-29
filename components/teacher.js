@@ -1,15 +1,10 @@
 import React from 'react'
 
-export default function teacher(props) {
+export default function teacher({id, subject}) {
   return (
     <>
-      {props.teacherArr.map((item, index) => (
-        <React.Fragment key={item.id}>
-          <p>{index}---</p>
-          <p>id: {item.id}</p>
-          <p>教科: {item.subject}</p>
-        </ React.Fragment>
-      ))}
+      <p>id: {id}</p>
+      <p>教科: {subject}</p>
     </>
   )
 }

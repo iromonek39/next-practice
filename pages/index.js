@@ -40,7 +40,14 @@ export default function Home() {
       <div className={styles.test}>test</div>
       <button onClick={clickTest}>クリックテスト</button>
       {isClick ? <p>クリックした</p> : <p>クリックしてない</p>}
-      <Teacher teacherArr={arr}/>
+      {
+        arr.map((item, index) => (
+          <Teacher
+            key={index}
+            subject={item.subject}
+            id={item.id}/>
+        ))
+      }
       <button onClick={linkTo}>testに遷移</button>
     </>
   )
