@@ -43,9 +43,13 @@ export default function Home() {
       {
         arr.map((item, index) => (
           <Teacher
+            {...item}
             key={index}
-            subject={item.subject}
-            id={item.id}/>
+            // subject={item.subject}
+            // id={item.id}
+          >
+            これがprops.childrenだ！！！
+          </Teacher>
         ))
       }
       <button onClick={linkTo}>testに遷移</button>
