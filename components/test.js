@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 
 import styles from '../styles/HomeTest.module.css'
 import Teacher from './teacher'
+import Link from 'next/link'
 
 const layout = () => {
   const route = useRouter()
@@ -51,6 +52,9 @@ const layout = () => {
           ))
       }
       <button onClick={linkTo}>testに遷移</button>
+      <Link href="/test">
+        <p>testに遷移（Link）</p>
+      </Link>
     </>
   )
 }
