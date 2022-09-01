@@ -8,7 +8,7 @@ const test = () => {
   }
   return (
     <div onClick={linkTo}>
-      testだよ（トップに戻るよ）
+      testだよ（トップに戻るよ）ttset
     </div>
   )
 }
