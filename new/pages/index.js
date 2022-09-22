@@ -1,5 +1,8 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Footer from '@/components/Footer'
+import Header from '@/components/Header'
+import Hero from '@/components/Hero'
 import styles from '../styles/Home.module.css'
 
 const EachPost = () => {
@@ -13,17 +16,13 @@ const EachPost = () => {
 }
 
 export default function Home() {
-  const subtitle = 'アウトプットしていくサイト'
   return (
     <>
-      <header>HEADER</header>
+      <Header />
       <main>
-        <div>
-          <h1>CUBE</h1>
-          <p>{subtitle}</p>
-        </div>
+        <Hero />
       </main>
-      <footer>FOOTER</footer>
+      <Footer />
     </>
   )
 }
