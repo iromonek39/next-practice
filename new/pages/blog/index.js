@@ -1,9 +1,12 @@
 import Hero from '@/components/Hero'
+import Container from '@/components/Container'
 
 const Index = () => {
   return (
     <>
-      <Hero title="Blog" subtitle="Blog development" />
+      <Container>
+        <Hero title="Blog" subtitle="Blog development" />
+      </Container>
     </>
   )
 }
