@@ -1,6 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
+import Image from 'next/image'
 import { SideBySideCenter } from 'styles/layout'
+import cube from 'images/cube.jpg'
 
 const sideBySideCenter = css`
   ${SideBySideCenter}
@@ -32,7 +34,25 @@ const Hero = ({ title, subtitle, imageOn = false }) => {
           {subtitle}
         </p>
       </div>
-      {imageOn && <figure>[画像]</figure>}
+      {imageOn && (
+        <figure
+          css={css`
+            width: 100%;
+            @media and screen (min-width: 768px) {
+              width: 50%;
+            }
+          `}
+        >
+          <Image
+            src={cube}
+            alt=""
+            layout="responsive"
+            sizes="(min-width: 1152px) 576px, (min-width: 768px) 50vw, 100vw"
+            priority
+            placeholder="blur"
+          />
+        </figure>
+      )}
     </div>
   )
 }
